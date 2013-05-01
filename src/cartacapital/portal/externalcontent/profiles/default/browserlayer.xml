@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <layers>
  <layer name="cartacapital.portal.externalcontent"
-    interface="cartacapital.portal.externalcontent.IExternalContentLayer" />
+    interface="cartacapital.portal.externalcontent.interfaces.IExternalContentLayer" />
 </layers>
