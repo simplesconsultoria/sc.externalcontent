@@ -1,0 +1,18 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+       i18n:domain="cartacapital.portal.externalcontent">
+    <schema>
+      <field name="remoteUrl" type="zope.schema.TextLine">
+        <default>http://</default>
+        <description>The Feed address (url) to this blog.
+        </description>
+        <title>Feed Address</title>
+      </field>
+    <field name="image" type="plone.namedfile.field.NamedBlobImage"
+        marshal:primary="true">
+      <description />
+      <title i18n:translate="Image">Image</title>
+    </field>
+    </schema>
+</model>

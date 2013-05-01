@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cartacapital.portal.externalcontent 1.0\n"
+"POT-Creation-Date: 2013-05-01 18:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
+msgid "Edit"
+msgstr "Editar"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+msgid "External Blog"
+msgstr "Blog de Parceiro"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
+msgid "External Blog Entry"
+msgstr "Postagem"
+
+#. Default: "Image"
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Image"
+msgstr "Imagem"
+
+#: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:15
+msgid "Info"
+msgstr "Informação"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlogEntry.xml
+msgid "Text"
+msgstr "Corpo"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
+msgid "View"
+msgstr "Visão"
+
+#. Default: "The link address is:"
+#: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:28
+msgid "link_address"
+msgstr "O endereço do link é:"
+
+#. Default: "You see this page because you have permission to edit this blog entry. Others will be immediately redirected to the link's target URL."
+#: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:16
+msgid "message_permissions_blocking_link_redirect"
+msgstr "Você visualiza este conteúdo pois tem permissão para editá-lo. Outros serão imediatamente redirecionados para o endereço original deste post."
+

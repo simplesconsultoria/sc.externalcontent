@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="cartacapital.portal.externalcontent">
+
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Carta Capital: Integração de conteúdo externo"
+      directory="profiles/default"
+      description="Integração de conteúdos externos ao site da Carta Capital"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <gs:registerProfile
+      name="uninstall"
+      title="Carta Capital: Remove conteúdo externo"
+      directory="profiles/uninstall"
+      description="Desinstala a integração de conteúdos externos ao site da Carta Capital"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>
