@@ -32,11 +32,6 @@ class ExternalBlogIntegrationTestCase(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name='ExternalBlog')
         self.assertIsNotNone(fti)
 
-    def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='ExternalBlog')
-        schema = fti.lookupSchema()
-        self.assertEqual(IExternalBlog, schema)
-
     def test_factory(self):
         fti = queryUtility(IDexterityFTI, name='ExternalBlog')
         factory = fti.factory
@@ -63,11 +58,6 @@ class ExternalBlogEntryIntegrationTestCase(unittest.TestCase):
     def test_fti(self):
         fti = queryUtility(IDexterityFTI, name='ExternalBlogEntry')
         self.assertIsNotNone(fti)
-
-    def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='ExternalBlogEntry')
-        schema = fti.lookupSchema()
-        self.assertEqual(IExternalBlogEntry, schema)
 
     def test_factory(self):
         fti = queryUtility(IDexterityFTI, name='ExternalBlogEntry')
