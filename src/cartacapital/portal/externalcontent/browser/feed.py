@@ -41,7 +41,7 @@ class ProcessFeeds(grok.View):
         ''' Processa a lista de feeds '''
         member = self._mt.getAuthenticatedMember()
         self._username = member and member.getUserName() or ''
-        status = self.processa_feed()
+        self.processa_feed()
         url = self.context.absolute_url()
         return self.context.REQUEST.RESPONSE.redirect(url)
 
@@ -99,13 +99,11 @@ class ProcessFeeds(grok.View):
         creation_date = (item.get('created_parsed', '') or
                          item.get('published_parsed', '') or
                          item.get('updated_parsed', now))
-        dictNews['creation_date'] = str_to_datetime(creation_date and
-                                     time.strftime('%Y-%m-%d %H:%M',
-                                                   creation_date))
+        dictNews['creation_date'] = str_to_datetime(
+            creation_date and time.strftime('%Y-%m-%d %H:%M', creation_date))
         effectiveDate = item.get('published_parsed', '') or creation_date
-        dictNews['effectiveDate'] = str_to_datetime(effectiveDate and
-                                     time.strftime('%Y-%m-%d %H:%M',
-                                                   effectiveDate))
+        dictNews['effectiveDate'] = str_to_datetime(
+            effectiveDate and time.strftime('%Y-%m-%d %H:%M', effectiveDate))
         dictNews['anexos'] = item.get('enclosures', [])
         dictNews['remoteUrl'] = item.get('link', '')
         # id deve ser uma string
