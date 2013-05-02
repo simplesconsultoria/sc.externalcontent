@@ -1,7 +1,7 @@
-Changelog
-=========
+There's a frood who really knows where his towel is
+---------------------------------------------------
 
-1.0-dev (unreleased)
---------------------
+1.0a1 (unreleased)
+^^^^^^^^^^^^^^^^^^
 
-- Package created [ericof]
+- Initial release.
