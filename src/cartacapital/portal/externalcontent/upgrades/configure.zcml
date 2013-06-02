@@ -1,0 +1,7 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Upgrades -->
+  <include package=".v2000" />
+
+</configure>
