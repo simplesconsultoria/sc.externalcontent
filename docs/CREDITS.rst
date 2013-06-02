@@ -8,4 +8,6 @@ the contribution of the following people:
 
 Development sponsored by `Simples Consultoria`_.
 
+Status Icons: http://deleket.deviantart.com/
+
 .. _`Simples Consultoria`: http://www.simplesconsultoria.com.br/
