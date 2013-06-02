@@ -9,9 +9,8 @@
       </field>
       <field name="remoteUrl" type="zope.schema.TextLine">
         <default>http://</default>
-        <description>The link is used almost verbatim, relative links become absolute and the strings "${navigation_root_url}" and "${portal_url}" get replaced with the real navigation_root_url or portal_url. If in doubt which one to use, please use navigation_root_url.
-        </description>
-        <title>Original URL</title>
+        <description></description>
+        <title i18n:translate="">Original URL</title>
       </field>     	
     </schema>
 </model>
