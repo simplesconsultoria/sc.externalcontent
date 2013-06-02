@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cartacapital.portal.externalcontent 1.0\n"
-"POT-Creation-Date: 2013-05-01 18:51+0000\n"
+"POT-Creation-Date: 2013-06-02 21:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,28 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Address to this site (i.e.:http://myblog.cartacapital.com.br)"
+msgstr "Endereço do site (ex: http://meublog.cartacapital.com.br)"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/upgrades/v2000/profiles/default/types/ExternalBlog.xml
+msgid "An External Blog within our network"
+msgstr "Um blog de parceiro"
+
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:34
+msgid "Banners instalados"
+msgstr "Banners instalados"
+
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:41
+msgid "Barra instalada"
+msgstr "Barra instalada"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/upgrades/v2000/profiles/default/types/ExternalBlog.xml
+msgid "Config"
+msgstr "Configurações"
 
 #: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
 #: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
@@ -27,18 +49,44 @@ msgstr "Blog de Parceiro"
 msgid "External Blog Entry"
 msgstr "Postagem"
 
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Feed Address"
+msgstr "Endereço do RSS"
+
 #. Default: "Image"
 #: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
 msgid "Image"
 msgstr "Imagem"
 
 #: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:15
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:13
 msgid "Info"
 msgstr "Informação"
 
 #: cartacapital/portal/externalcontent/content/schema/ExternalBlogEntry.xml
+msgid "Original URL"
+msgstr "Endereço do post original"
+
+#. Default: "Section"
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Section"
+msgstr "Seção"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Site address"
+msgstr "Endereço do site"
+
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:27
+msgid "Site no domínio cartacapital.com.br"
+msgstr "Site no domínio cartacapital.com.br"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlogEntry.xml
 msgid "Text"
 msgstr "Corpo"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "The Feed address (url) to this blog."
+msgstr "Endereço (url) do RSS para este blog."
 
 #: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
 #: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
