@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="cartacapital.portal.externalcontent">
+
+<body>
+
+    <metal:header fill-slot="header">
+        <dl class="portalMessage info">
+            <dt i18n:translate="">Info</dt>
+            <dd>Blog Configurado</dd>
+        </dl>
+    </metal:header>
+
+    <metal:content-core fill-slot="content-core">
+        <metal:block define-macro="content-core">
+          <div id="partner-status">
+            <h2>Status do parceiro</h2>
+            <div>
+                <img alt="" src=""
+                    tal:attributes="src view/domain_status_image;
+                                    alt view/domain_status"
+                />
+                <span i18n:translate="">Site no domínio cartacapital.com.br</span>
+            </div>
+            <div>
+                <img alt="" src=""
+                    tal:attributes="src view/ads_status_image;
+                                    alt view/ads_status"
+                />                
+                <span i18n:translate="">Banners instalados</span>
+            </div>
+            <div>
+                <img alt="" src=""
+                    tal:attributes="src view/bar_status_image;
+                                    alt view/bar_status"
+                />           
+                <span i18n:translate="">Barra instalada</span>
+            </div>
+          </div>
+          <div id="partner-code">
+            <h2>Código de parceiro</h2>
+            <span>Código a ser inserido pelo parceiro em todas as suas páginas. Este código deve ser inserido exatamente após a tag <strong>&lt;body&gt;</strong>.</span><br />
+            <pre tal:content="view/javascript">
+            </pre>
+          </div> 
+        </metal:block>
+    </metal:content-core>
+
+</body>
+</html>
+
