@@ -7,6 +7,10 @@
         <required>False</required>
         <title i18n:translate="">Text</title>
       </field>
+      <field name="image" type="plone.namedfile.field.NamedBlobImage">
+        <description />
+        <title i18n:translate="Image">Image</title>
+      </field>
       <field name="remoteUrl" type="zope.schema.TextLine">
         <default>http://</default>
         <description></description>
