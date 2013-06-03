@@ -1,17 +1,21 @@
 # -*- coding:utf-8 -*-
 from Acquisition import aq_inner
+from cartacapital.portal.externalcontent.content import blog
+from cartacapital.portal.externalcontent.utils import str_to_datetime
+from cartacapital.portal.externalcontent.utils import unescape
 from datetime import datetime
 from DateTime import DateTime
-from Products.CMFPlone.utils import _createObjectByType
-from cartacapital.portal.externalcontent.utils import unescape
-from cartacapital.portal.externalcontent.utils import str_to_datetime
-from cartacapital.portal.externalcontent.content import blog
-from zope.component import getMultiAdapter
-from plone.app.textfield.value import RichTextValue
 from five import grok
+from lxml.cssselect import CSSSelector
+from plone.app.textfield.value import RichTextValue
+from plone.namedfile.file import NamedBlobImage
+from Products.CMFPlone.utils import _createObjectByType
+from urllib2 import urlopen
+from zope.component import getMultiAdapter
 
 import feedparser
 import logging
+import lxml.html
 import time
 
 
@@ -70,6 +74,12 @@ class ProcessFeeds(grok.View):
 
         now = datetime.now().timetuple()
         dictNews['title'] = item.get('title', '')
+        # id deve ser uma string
+        entry_id = str(self._putils.normalizeString('%s' % dictNews['title']))
+        if entry_id in self.context.objectIds():
+            # Content already there, ignore it
+            return {}
+        dictNews['id'] = entry_id
         description = item.get('summary', '')
         text = ''
         content = item.get('content', [{}, ])
@@ -89,7 +99,7 @@ class ProcessFeeds(grok.View):
                            if l.strip()][0]
         dictNews['description'] = unescape(description).decode('utf-8')
         dictNews['text'] = text
-        dictNews['image'] = None
+        dictNews['image'] = self._image_from_body(text)
         dictNews['image_caption'] = ''
         tags = item.get('tags', []) and [tag.get('term', '')
                                          for tag in item.get('tags', [])] or []
@@ -102,14 +112,25 @@ class ProcessFeeds(grok.View):
         dictNews['creation_date'] = str_to_datetime(
             creation_date and time.strftime('%Y-%m-%d %H:%M', creation_date))
         effectiveDate = item.get('published_parsed', '') or creation_date
-        dictNews['effectiveDate'] = str_to_datetime(
+        dictNews['effective_date'] = str_to_datetime(
             effectiveDate and time.strftime('%Y-%m-%d %H:%M', effectiveDate))
         dictNews['anexos'] = item.get('enclosures', [])
-        dictNews['remoteUrl'] = item.get('link', '')
-        # id deve ser uma string
-        entry_id = str(self._putils.normalizeString('%s' % dictNews['title']))
-        dictNews['id'] = entry_id
+        dictNews['remoteUrl'] = item.get('feedburner_origlink',
+                                         item.get('link', ''))
         return dictNews
+
+    def _image_from_body(self, text):
+        ''' Get the first image from entry body '''
+        dom = lxml.html.fromstring(text)
+        selAnchor = CSSSelector('img')
+        foundElements = selAnchor(dom)
+        links = [e.get('src') for e in foundElements]
+        if links:
+            link = links[0]
+            fh = urlopen(link)
+            data = fh.read()
+            content_type = fh.headers['content-type']
+            return (data, content_type)
 
     def _objFromUID(self, uid):
         ''' Return a object from an UID '''
@@ -139,6 +160,12 @@ class ProcessFeeds(grok.View):
             if k in ['text']:
                 v = RichTextValue(v, 'text/html', 'text/html')
                 o.text = v
+            if k in ['image']:
+                data = v[0]
+                content_type = v[1]
+                filename = u'image.%s' % (content_type.split('/')[1])
+                v = NamedBlobImage(data, content_type, filename)
+                o.image = v
             if v and getattr(o, k, ''):
                 setattr(o, k, v)
         o.exclude_from_nav = True
@@ -162,6 +189,10 @@ class ProcessFeeds(grok.View):
             for item in items:
                 dictNews = self._feedItemsToNews(item,
                                                  feedName)
+                if not dictNews:
+                    # Already processed
+                    log.info('     - Item ja processado')
+                    continue
                 date = DateTime(dictNews['creation_date'])
                 totais['entries'] = totais['entries'] + 1
                 itemsDates.append(date)
