@@ -99,8 +99,10 @@ class ProcessFeeds(grok.View):
                            if l.strip()][0]
         dictNews['description'] = unescape(description).decode('utf-8')
         dictNews['text'] = text
-        dictNews['image'] = self._image_from_body(text)
-        dictNews['image_caption'] = ''
+        image = self._image_from_body(text)
+        if image:
+            dictNews['image'] = image
+            dictNews['image_caption'] = ''
         tags = item.get('tags', []) and [tag.get('term', '')
                                          for tag in item.get('tags', [])] or []
         dictNews['subjects'] = tags

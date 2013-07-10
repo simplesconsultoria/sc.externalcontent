@@ -1,6 +1,12 @@
 There's a frood who really knows where his towel is
 ---------------------------------------------------
 
+1.0a5 (2013-07-10)
+^^^^^^^^^^^^^^^^^^^
+
+- Fix a bug with image handling [ericof]
+
+
 1.0a4 (2013-07-10)
 ^^^^^^^^^^^^^^^^^^^
 
