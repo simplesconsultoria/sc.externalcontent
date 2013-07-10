@@ -3,6 +3,7 @@ from Acquisition import aq_inner
 from cartacapital.portal.externalcontent.config import TEMPLATE
 from cartacapital.portal.externalcontent.content import blog
 from five import grok
+from urllib2 import HTTPError
 from urllib2 import urlopen
 from zope.component import getMultiAdapter
 
@@ -35,10 +36,16 @@ class ConfigView(grok.View):
         return TEMPLATE % (self.partner, self.section)
 
     def _process_site(self):
-        fh = urlopen(self.url)
-        self.site_url = fh.url
-        self.site_data = fh.read()
-        fh.close()
+        try:
+            fh = urlopen(self.url)
+        except HTTPError:
+            # Error
+            self.site_url = ''
+            self.site_data = ''
+        else:
+            self.site_url = fh.url
+            self.site_data = fh.read()
+            fh.close()
 
     def _domain_status(self):
         ''' Check if site is on cartacapital.com.br domain '''
@@ -50,7 +57,7 @@ class ConfigView(grok.View):
     def _ads_status(self):
         ''' Check if ads (anuncios) are installed '''
         status = True
-        expected = 'var partner = "%s";' % self.partner
+        expected = 'div-gpt-ad-1370011663251-0'
         status = expected in self.site_data
         self.ads_status_image = STATUS_IMG % (self.portal_url,
                                               status and 'green' or 'red')
