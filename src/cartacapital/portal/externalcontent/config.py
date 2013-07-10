@@ -29,7 +29,8 @@ googletag.enableServices();
 });
 </script>
 <!-- Parceiros-Cabecalho -->
-<div id='div-gpt-ad-1370011663251-0' style='width:728px; height:90px;'>
+<div id='div-gpt-ad-1370011663251-0'
+style='width:728px; height:90px; margin: 1em auto;'>
 <script type='text/javascript'>
 googletag.cmd.push(function() {
 googletag.display('div-gpt-ad-1370011663251-0'); });
