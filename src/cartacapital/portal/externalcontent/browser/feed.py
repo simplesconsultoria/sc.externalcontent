@@ -121,6 +121,8 @@ class ProcessFeeds(grok.View):
 
     def _image_from_body(self, text):
         ''' Get the first image from entry body '''
+        if not text:
+            return None
         dom = lxml.html.fromstring(text)
         selAnchor = CSSSelector('img')
         foundElements = selAnchor(dom)
