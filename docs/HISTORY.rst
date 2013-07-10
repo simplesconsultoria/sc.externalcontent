@@ -1,8 +1,18 @@
 There's a frood who really knows where his towel is
 ---------------------------------------------------
 
-1.0a3 (unreleased)
-^^^^^^^^^^^^^^^^^^
+1.0a4 (2013-07-10)
+^^^^^^^^^^^^^^^^^^^
+
+- Fix a bug when no content body was provided in the feed [ericof]
+
+- Style fix for partner code [ericof]
+
+- Fix config checking [ericof]
+
+
+1.0a3 (2013-06-03)
+^^^^^^^^^^^^^^^^^^^
 
 - Add image field to blog entry [ericof]
 
