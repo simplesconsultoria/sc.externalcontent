@@ -3,6 +3,7 @@ from Acquisition import aq_inner
 from cartacapital.portal.externalcontent.config import TEMPLATE
 from cartacapital.portal.externalcontent.content import blog
 from five import grok
+from Products.CMFCore.utils import getToolByName
 from urllib2 import HTTPError
 from urllib2 import urlopen
 from zope.component import getMultiAdapter
@@ -10,6 +11,27 @@ from zope.component import getMultiAdapter
 
 grok.templatedir('templates')
 STATUS_IMG = '%s/++resource++cartacapital.portal.externalcontent/%s.png'
+
+
+class BlogView(grok.View):
+    grok.context(blog.IExternalBlog)
+    grok.name('blog_view')
+
+    def update(self):
+        """Redirect to the blog home if user is not able
+           to edit it
+        """
+        context = self.context
+        mtool = getToolByName(context, 'portal_membership')
+
+        can_edit = mtool.checkPermission('Modify portal content', context)
+
+        if not can_edit:
+            url = context.siteUrl
+            return context.REQUEST.RESPONSE.redirect(url)
+
+    def render(self):
+        return self.context.restrictedTraverse('folder_summary_view')()
 
 
 class ConfigView(grok.View):

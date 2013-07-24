@@ -15,9 +15,9 @@
     <element value="ExternalBlogEntry"/>
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">folder_summary_view</property>
+ <property name="default_view">blog_view</property>
  <property name="view_methods">
-  <element value="folder_summary_view"/>
+  <element value="blog_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>
