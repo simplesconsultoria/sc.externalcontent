@@ -1,6 +1,11 @@
 There's a frood who really knows where his towel is
 ---------------------------------------------------
 
+1.0a6 (2013-07-24)
+^^^^^^^^^^^^^^^^^^^
+
+- Add a default view for ExternalBlog [ericof]
+
 1.0a5 (2013-07-10)
 ^^^^^^^^^^^^^^^^^^^
 
