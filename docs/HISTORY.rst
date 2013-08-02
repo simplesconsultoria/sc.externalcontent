@@ -1,6 +1,11 @@
 There's a frood who really knows where his towel is
 ---------------------------------------------------
 
+1.0a7 (2013-08-02)
+^^^^^^^^^^^^^^^^^^^
+
+- Just create entries **if** they have an id [ericof]
+
 1.0a6 (2013-07-24)
 ^^^^^^^^^^^^^^^^^^^
 
