@@ -119,6 +119,8 @@ class ProcessFeeds(grok.View):
         dictNews['anexos'] = item.get('enclosures', [])
         dictNews['remoteUrl'] = item.get('feedburner_origlink',
                                          item.get('link', ''))
+        if not dictNews['id']:
+            dictNews = None
         return dictNews
 
     def _image_from_body(self, text):
