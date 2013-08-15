@@ -29,7 +29,7 @@
             <a href="#" tal:attributes="href url"
                         tal:content="context/remoteUrl">remote url</a>
         </p>
-        <div tal:replace="structure context/text/output" />     
+        <div tal:replace="structure context/text/output|nothing" />
         </metal:block>
     </metal:content-core>
 
