@@ -1,6 +1,11 @@
 There's a frood who really knows where his towel is
 ---------------------------------------------------
 
+1.0a8 (Unreleased)
+^^^^^^^^^^^^^^^^^^^
+
+- Avoid error if text is empty [cleberjsantos]
+
 1.0a7 (2013-08-02)
 ^^^^^^^^^^^^^^^^^^^
 
