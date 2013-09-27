@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from collective.nitf.controlpanel import INITFSettings
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 
 class Fixture(PloneSandboxLayer):
@@ -19,6 +22,9 @@ class Fixture(PloneSandboxLayer):
         # Install into Plone site using portal_setup
         profile = 'cartacapital.portal.externalcontent:default'
         self.applyProfile(portal, profile)
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(INITFSettings)
+        settings.available_sections = set([u'Tommy', u'Jerry'])
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
