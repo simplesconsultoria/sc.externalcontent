@@ -1,7 +1,9 @@
-There's a frood who really knows where his towel is
----------------------------------------------------
+Changelog
+---------
 
-1.0a8 (Unreleased)
+There's a frood who really knows where his towel is.
+
+1.0rc1 (Unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
 - Added section method in ExternalBlogEntry (closes #7745) 
