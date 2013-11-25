@@ -49,6 +49,7 @@ class ExternalBlogEntryIntegrationTestCase(unittest.TestCase):
         self.portal.invokeFactory('ExternalBlog', 'test-blog')
         setRoles(self.portal, TEST_USER_ID, ['Member'])
         self.blog = self.portal['test-blog']
+        self.blog.section = u"Tommy"
         self.blog.invokeFactory('ExternalBlogEntry', 'entry')
         self.blog = self.blog['entry']
 
@@ -64,3 +65,6 @@ class ExternalBlogEntryIntegrationTestCase(unittest.TestCase):
         factory = fti.factory
         new_object = createObject(factory)
         self.assertTrue(IExternalBlogEntry.providedBy(new_object))
+
+    def test_section(self):
+        self.assertEqual(self.blog.section, u"Tommy")

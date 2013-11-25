@@ -46,6 +46,7 @@ setup(name='cartacapital.portal.externalcontent',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+        'collective.nitf',
           'feedparser',
           'five.grok',
           'Pillow',

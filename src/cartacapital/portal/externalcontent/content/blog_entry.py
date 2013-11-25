@@ -1,4 +1,5 @@
     # -*- coding: utf-8 -*-
+from Acquisition import aq_parent
 from plone.dexterity.content import Item
 from zope.interface import implements
 from zope.interface import Interface
@@ -34,3 +35,8 @@ class ExternalBlogEntry(Item):
                         scale=scale,
                         css_class=css_class,
                         **kw)
+
+    @property
+    def section(self):
+        blog = aq_parent(self)
+        return blog.section
