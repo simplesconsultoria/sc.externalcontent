@@ -10,6 +10,7 @@ from lxml.cssselect import CSSSelector
 from plone.app.textfield.value import RichTextValue
 from plone.namedfile.file import NamedBlobImage
 from Products.CMFPlone.utils import _createObjectByType
+from urllib2 import URLError
 from urllib2 import urlopen
 from zope.component import getMultiAdapter
 
@@ -133,7 +134,12 @@ class ProcessFeeds(grok.View):
         links = [e.get('src') for e in foundElements]
         if links:
             link = links[0]
-            fh = urlopen(link)
+            try:
+                fh = urlopen(link)
+            except URLError:
+                # Not able to open the link
+                # return an empty image
+                return None
             data = fh.read()
             content_type = fh.headers['content-type']
             return (data, content_type)

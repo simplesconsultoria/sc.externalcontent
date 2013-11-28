@@ -6,6 +6,8 @@ There's a frood who really knows where his towel is.
 1.0rc1 (Unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Avoid error if URL is not reachable [ericof]
+
 - Added section method in ExternalBlogEntry (closes #7745) 
   [marcosfromero]
 
