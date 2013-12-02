@@ -11,6 +11,7 @@ from plone.app.textfield.value import RichTextValue
 from plone.namedfile.file import NamedBlobImage
 from Products.CMFPlone.utils import _createObjectByType
 from urllib2 import URLError
+from urllib2 import Request
 from urllib2 import urlopen
 from zope.component import getMultiAdapter
 
@@ -21,6 +22,13 @@ import time
 
 
 log = logging.getLogger('cartacapital.portal.externalcontent')
+
+HDR = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+       'Accept-Encoding': 'none',
+       'Accept-Language': 'en-US,en;q=0.8',
+       'Connection': 'keep-alive'}
 
 
 class ProcessFeeds(grok.View):
@@ -134,8 +142,9 @@ class ProcessFeeds(grok.View):
         links = [e.get('src') for e in foundElements]
         if links:
             link = links[0]
+            req = Request(link, headers=HDR)
             try:
-                fh = urlopen(link)
+                fh = urlopen(req)
             except URLError:
                 # Not able to open the link
                 # return an empty image
