@@ -133,7 +133,7 @@ class ProcessFeeds(grok.View):
         links = [e.get('src') for e in foundElements]
         if links:
             link = links[0]
-            fh = urlopen(link)
+            fh = urlopen(link.encode('utf-8'))
             data = fh.read()
             content_type = fh.headers['content-type']
             return (data, content_type)
@@ -175,9 +175,10 @@ class ProcessFeeds(grok.View):
             if v and getattr(o, k, ''):
                 setattr(o, k, v)
         o.exclude_from_nav = True
-        o.reindexObject()
+        o.setEffectiveDate(DateTime())
 
         wt.doActionFor(o, 'publish')
+        o.reindexObject()
         return o
 
     def processa_feed(self):
@@ -187,7 +188,7 @@ class ProcessFeeds(grok.View):
         feedName = self.context.Title()
         feedUrl = self.context.remoteUrl
         data = self._getFeed(feedUrl)
-        if hasattr(data, 'status') and int(data.status) == 200:
+        if hasattr(data, 'entries'):
             items = data.entries
             log.info('Feed %s processado: %d items' %
                      (feedName, len(items)))

@@ -10,6 +10,8 @@ from zope.component import createObject
 from zope.component import queryUtility
 
 import unittest
+from App.Common import package_home
+import os
 
 
 class ExternalBlogIntegrationTestCase(unittest.TestCase):
@@ -68,3 +70,20 @@ class ExternalBlogEntryIntegrationTestCase(unittest.TestCase):
     def test_section(self):
         self.blog.section = u'Tommy'
         self.assertEqual(self.post.section, u'Tommy')
+
+
+class ProcessFeedsIntegrationTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal.invokeFactory('ExternalBlog', 'test-blog')
+        self.blog = self.portal['test-blog']
+        self.blog.remoteUrl = os.path.join(package_home(globals()), 'test_feed.rss')
+
+    def test_view(self):
+        self.assertTrue(len(self.blog.objectIds()) == 0)
+        self.blog.restrictedTraverse('@@processa-feeds')()
+        self.assertTrue(len(self.blog.objectIds()) != 0)
