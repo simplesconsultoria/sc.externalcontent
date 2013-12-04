@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
+from App.Common import package_home
 from cartacapital.portal.externalcontent.content.blog import IExternalBlog
 from cartacapital.portal.externalcontent.content.blog_entry import IExternalBlogEntry
 from cartacapital.portal.externalcontent.testing import INTEGRATION_TESTING
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
+from Products.CMFCore.utils import getToolByName
 from zope.component import createObject
 from zope.component import queryUtility
 
 import unittest
-from App.Common import package_home
 import os
 
 
@@ -84,6 +85,20 @@ class ProcessFeedsIntegrationTestCase(unittest.TestCase):
         self.blog.remoteUrl = os.path.join(package_home(globals()), 'test_feed.rss')
 
     def test_view(self):
-        self.assertTrue(len(self.blog.objectIds()) == 0)
+        self.assertEqual(len(self.blog.objectIds()), 0)
         self.blog.restrictedTraverse('@@processa-feeds')()
-        self.assertTrue(len(self.blog.objectIds()) != 0)
+        self.assertEqual(len(self.blog.objectIds()), 10)
+        self.assertIsNotNone(self.blog.get('pororoca'))
+
+        self.blog.restrictedTraverse('@@processa-feeds')()
+        self.assertEqual(len(self.blog.objectIds()), 10)
+
+        workflowTool = getToolByName(self.portal, 'portal_workflow')
+        ob = self.blog.get('pororoca')
+        chain = workflowTool.getChainFor(ob)
+        self.assertEqual(len(chain), 1)
+        self.assertEqual(chain[0], 'simple_publication_workflow')
+
+        status = workflowTool.getStatusOf('simple_publication_workflow', ob)
+        state = status["review_state"]
+        self.assertEqual(state, 'published')
