@@ -6,6 +6,11 @@ There's a frood who really knows where his towel is.
 1.0rc1 (Unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Avoid error if URL is not reachable when looking for images in a feed entry body [ericof]
+
+- To avoid blocking (by Cloudflare) we set fake headers on our requests
+  [ericof] 
+
 - Added section method in ExternalBlogEntry (closes #7745) 
   [marcosfromero]
 
