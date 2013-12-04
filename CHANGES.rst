@@ -6,6 +6,10 @@ There's a frood who really knows where his towel is.
 1.0rc1 (Unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Set effective date when importing external blog entries [jpg] (closes #8181)
+
+- Fix encoding when importing images [jpg]
+
 - Avoid error if URL is not reachable when looking for images in a feed entry body [ericof]
 
 - To avoid blocking (by Cloudflare) we set fake headers on our requests
