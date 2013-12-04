@@ -187,10 +187,9 @@ class ProcessFeeds(grok.View):
                 filename = u'image.%s' % (content_type.split('/')[1])
                 v = NamedBlobImage(data, content_type, filename)
                 o.image = v
-            if v and getattr(o, k, ''):
+            if v and hasattr(o, k):
                 setattr(o, k, v)
         o.exclude_from_nav = True
-        o.setEffectiveDate(DateTime())
 
         wt.doActionFor(o, 'publish')
         o.reindexObject()

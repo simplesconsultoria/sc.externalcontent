@@ -1,0 +1,6 @@
+[run]
+include = src/*
+
+[report]
+omit =
+    */test*

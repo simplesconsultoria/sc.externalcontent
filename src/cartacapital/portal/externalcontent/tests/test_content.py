@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from App.Common import package_home
+from DateTime import DateTime
 from cartacapital.portal.externalcontent.content.blog import IExternalBlog
 from cartacapital.portal.externalcontent.content.blog_entry import IExternalBlogEntry
 from cartacapital.portal.externalcontent.testing import INTEGRATION_TESTING
@@ -102,3 +103,8 @@ class ProcessFeedsIntegrationTestCase(unittest.TestCase):
         status = workflowTool.getStatusOf('simple_publication_workflow', ob)
         state = status["review_state"]
         self.assertEqual(state, 'published')
+        self.assertEqual(ob.effective_date, DateTime('2013/11/30 22:27:00 GMT+0'))
+
+        catalog = getToolByName(self.portal, 'portal_catalog')
+        brains = catalog(id='pororoca')
+        self.assertEqual(brains[0].EffectiveDate, '2013-11-30T19:27:00-03:00')
