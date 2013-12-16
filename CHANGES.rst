@@ -6,13 +6,11 @@ There's a frood who really knows where his towel is.
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Fix setattr when importing blog entries. [jpg]
 
 
 1.0rc1 (2013-12-04)
 ^^^^^^^^^^^^^^^^^^^
-
-- Fix setattr when importing blog entries. [jpg]
 
 - Set effective date when importing external blog entries [jpg] (closes #8181)
 
