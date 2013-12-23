@@ -3,7 +3,7 @@
 *.pyc
 *~
 .*project
-.coveragerc
+.coverage
 .installed.cfg
 .mr.developer.cfg
 .settings
