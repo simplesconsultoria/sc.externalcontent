@@ -90,9 +90,9 @@ class ProcessFeeds(grok.View):
             return {}
         dictNews['id'] = entry_id
         description = item.get('summary', '')
-        text = ''
+        text = '<div></div>'
         content = item.get('content', [{}, ])
-        if 'value' in content[0]:
+        if 'value' in content[0] and content[0].value:
             text = content[0].value
         description_type = item.get('summary_detail', {}).get('type',
                                                               'text/plain')

@@ -8,6 +8,7 @@ There's a frood who really knows where his towel is.
 
 - Fix setattr when importing blog entries. [jpg]
 
+- Fix an issue importing blog entries with an empty body content. [jpg]
 
 1.0rc1 (2013-12-04)
 ^^^^^^^^^^^^^^^^^^^
