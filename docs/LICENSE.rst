@@ -1,4 +1,4 @@
-cartacapital.portal.externalcontent Copyright 2013, Simples Consultoria
+sc.externalcontent Copyright 2013, Simples Consultoria
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

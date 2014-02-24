@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="sc.externalcontent">
+
+  <browser:page
+      name="sc-externalcontent-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".configlet.ControlPanel"
+      permission="cmf.ManagePortal" />
+
+</configure>

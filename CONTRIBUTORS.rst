@@ -1,10 +1,12 @@
 Share and Enjoy
 ---------------
 
-``cartacapital.portal.externalcontent`` would not have been possible without
+``sc.externalcontent`` would not have been possible without
 the contribution of the following people:
 
 - Érico Andrei
+
+- Juan Pablo Giménez
 
 Development sponsored by `Simples Consultoria`_.
 

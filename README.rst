@@ -3,7 +3,7 @@
 Introduction
 ------------
 
-Integração da Carta Capital com conteúdo externo.
+Integração de conteúdo externo RSS no Plone.
 
 Installation
 ------------
@@ -15,14 +15,14 @@ To enable this package in a buildout-based installation:
     [buildout]
     ...
     eggs =
-        cartacapital.portal.externalcontent
+        sc.externalcontent
 
 After updating the configuration you need to run ''bin/buildout'', which will
 take care of updating your system.
 
 Go to the 'Site Setup' page in a Plone site and click on the 'Add-ons' link.
 
-Check the box next to ``cartacapital.portal.externalcontent`` and click the
+Check the box next to ``sc.externalcontent`` and click the
 'Activate' button.
 
 .. Note::

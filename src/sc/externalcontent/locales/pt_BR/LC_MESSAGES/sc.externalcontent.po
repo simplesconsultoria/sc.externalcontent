@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sc.externalcontent 1.0\n"
+"POT-Creation-Date: 2013-06-03 20:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Address to this site (i.e.:http://myblog.cartacapital.com.br)"
+msgstr "Endereço do site (ex: http://meublog.cartacapital.com.br)"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/upgrades/v2000/profiles/default/types/ExternalBlog.xml
+msgid "An External Blog within our network"
+msgstr "Um blog de parceiro"
+
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:34
+msgid "Banners instalados"
+msgstr "Banners instalados"
+
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:41
+msgid "Barra instalada"
+msgstr "Barra instalada"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/upgrades/v2000/profiles/default/types/ExternalBlog.xml
+msgid "Config"
+msgstr "Configurações"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
+msgid "Edit"
+msgstr "Editar"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+msgid "External Blog"
+msgstr "Blog de Parceiro"
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
+msgid "External Blog Entry"
+msgstr "Postagem"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Feed Address"
+msgstr "Endereço do RSS"
+
+#. Default: "Image"
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlogEntry.xml
+msgid "Image"
+msgstr "Imagem"
+
+#: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:15
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:13
+msgid "Info"
+msgstr "Informação"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlogEntry.xml
+msgid "Original URL"
+msgstr "Endereço do post original"
+
+#. Default: "Section"
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Section"
+msgstr "Seção"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "Site address"
+msgstr "Endereço do site"
+
+#: cartacapital/portal/externalcontent/browser/templates/configview.pt:27
+msgid "Site no domínio cartacapital.com.br"
+msgstr "Site no domínio cartacapital.com.br"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlogEntry.xml
+msgid "Text"
+msgstr "Corpo"
+
+#: cartacapital/portal/externalcontent/content/schema/ExternalBlog.xml
+msgid "The Feed address (url) to this blog."
+msgstr "Endereço (url) do RSS para este blog."
+
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlog.xml
+#: cartacapital/portal/externalcontent/profiles/default/types/ExternalBlogEntry.xml
+msgid "View"
+msgstr "Visão"
+
+#. Default: "The link address is:"
+#: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:28
+msgid "link_address"
+msgstr "O endereço do link é:"
+
+#. Default: "You see this page because you have permission to edit this blog entry. Others will be immediately redirected to the link's target URL."
+#: cartacapital/portal/externalcontent/browser/templates/blogentryview.pt:16
+msgid "message_permissions_blocking_link_redirect"
+msgstr "Você visualiza este conteúdo pois tem permissão para editá-lo. Outros serão imediatamente redirecionados para o endereço original deste post."
+

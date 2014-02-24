@@ -1,7 +1,0 @@
-<metadata>
- <version>2000</version>
- <dependencies>
-  <dependency>profile-plone.app.dexterity:default</dependency>
-  <dependency>profile-collective.nitf:default</dependency>
- </dependencies>
-</metadata>
