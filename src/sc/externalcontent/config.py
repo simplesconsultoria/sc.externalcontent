@@ -17,13 +17,13 @@ node.parentNode.insertBefore(gads, node);
 })();
 </script>
 <script type='text/javascript'>
-var partner = "%s";
-var section = ["blogs", "%s"];
+var partner = '%s';
+var section = ['blogs', '%s'];
 googletag.cmd.push(function() {
 googletag.defineSlot('/14147850/Parceiros-Cabecalho', [728, 90],
 'div-gpt-ad-1370011663251-0').addService(googletag.pubads())
-.setTargeting("section", section)
-.setTargeting("partner", partner);
+.setTargeting('section', section)
+.setTargeting('partner', partner);
 googletag.pubads().enableSingleRequest();
 googletag.enableServices();
 });
@@ -36,6 +36,6 @@ googletag.cmd.push(function() {
 googletag.display('div-gpt-ad-1370011663251-0'); });
 </script>
 </div>
-<script id="barracartacapitaljs" type="text/javascript"
-src="http://js.cartacapital.com.br/barra.js"></script>
+<script id='barracartacapitaljs' type='text/javascript'
+src='http://js.cartacapital.com.br/barra.js'></script>
 '''

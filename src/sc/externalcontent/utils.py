@@ -11,10 +11,10 @@ def str_to_datetime(value):
 def unescape(text):
     def fixup(m):
         text = m.group(0)
-        if text[:2] == "&#":
+        if text[:2] == '&#':
             # character reference
             try:
-                if text[:3] == "&#x":
+                if text[:3] == '&#x':
                     return unichr(int(text[3:-1], 16))
                 else:
                     return unichr(int(text[2:-1]))
@@ -27,4 +27,4 @@ def unescape(text):
             except KeyError:
                 pass
         return text
-    return re.sub("&#?\w+;", fixup, text)
+    return re.sub('&#?\w+;', fixup, text)
